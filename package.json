@@ -1,0 +1,17 @@
+{
+  "name": "billplzv4",
+  "version": "1.0.1",
+  "description": "Billplz API v4. Code written by Suhaimi Amir, this is my humble attempt to implement v4",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "billplz"
+  ],
+  "author": "zubquzaini",
+  "license": "ISC"
+}
