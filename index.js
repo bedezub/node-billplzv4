@@ -10,10 +10,10 @@ module.exports = class BillplzV4 {
     this._apiKey = null
 
     this._apiEndpoint = 'https://www.billplz.com/api/v3/'
-    this._sandboxApiEndpoint = 'https://billplz-sandbox.herokuapp.com/api/v3/'
+    this._sandboxApiEndpoint = 'https://billplz-sandbox.com/api/v3/'
 
     this._apiEndpoint_v4 = 'https://www.billplz.com/api/v4/'
-    this._sandboxApiEndpoint_v4 = 'https://billplz-staging.herokuapp.com/api/v4/'
+    this._sandboxApiEndpoint_v4 = 'https://billplz-sandbox.com/api/v4/'
 
     this._isSandbox = false
 
