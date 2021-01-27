@@ -1,6 +1,6 @@
 {
   "name": "billplzv4",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Billplz API v4. Code written by Suhaimi Amir, this is my humble attempt to implement v4",
   "main": "index.js",
   "directories": {

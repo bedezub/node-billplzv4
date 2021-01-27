@@ -97,6 +97,9 @@ module.exports = class BillplzV4 {
 
   ///payout method
   create_payout(params, callback) {
-    return this.requestv4('mass_payment_instructions', params, callback);
+    wreck.post(this._apiEndpoint_v4 + 'mass_payment_instruction/' + params, (err, res, payload) => {
+      callback(err, JSON.parse(payload.toString()));
+    });
+    //return this.requestv4('mass_payment_instructions', params, callback);
   }
 }
