@@ -45,7 +45,13 @@ declare namespace BillplzV4 {
 
     // payout argument
     interface PayoutArgument {
-        
+        mass_payment_instruction_collection_id: string;
+        bank_code: string;
+        bank_account_number: string;
+        identitiy_number: string;
+        name: string;
+        description: string;
+        total: number;
     }
 }
 
