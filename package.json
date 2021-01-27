@@ -1,7 +1,7 @@
 {
   "name": "billplzv4",
-  "version": "1.0.4",
-  "description": "Billplz API v4. Code written by Suhaimi Amir, this is my humble attempt to implement v4",
+  "version": "1.0.5",
+  "description": "Billplz API v4. This project is under development",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "billplz"
+    "billplz", "billplzv4", "billplz-v4"
   ],
   "author": "zubquzaini",
   "license": "ISC"

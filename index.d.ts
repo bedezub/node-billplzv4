@@ -43,6 +43,15 @@ declare namespace BillplzV4 {
         reference_2?: string;
     }
 
+    // create bank account argument
+    interface BankAccountArgument {
+        name: string;
+        id_no: string;
+        acc_no: string;
+        code: string;
+        organization: Boolean;
+    }
+
     // payout argument
     interface PayoutArgument {
         mass_payment_instruction_collection_id: string;
@@ -79,6 +88,12 @@ declare class BillplzV4 {
 
     // registration check
     registration_check(bankAccountNumber: string, callback?: (res: any, err: any) => void): void;
+
+    // get bank account 
+    get_bank_account(bankAccountNumber: string, callback?: (res: any, err: any) => void): void;
+
+    // create bank account
+    create_bank_account(args: BillplzV4.BankAccountArgument, callback?: (res: any, err: any) => void): void;
 
     /// create payout
     create_payout(args: BillplzV4.PayoutArgument, callback?: (res: any, err: any) => void): void;

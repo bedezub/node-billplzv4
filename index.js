@@ -52,6 +52,8 @@ module.exports = class BillplzV4 {
     });
   }
 
+  /* Billplz version 3 API */
+
   //create collection
   create_collection(params, callback) {
     return this.request('collections', params, callback)
@@ -88,18 +90,32 @@ module.exports = class BillplzV4 {
     });
   }
 
-  //registration check
+  //registration check - company
   registration_check(bankAccountNumber, callback) {
     wreck.get(this._apiEndpoint + 'check/bank_account_number/' + bankAccountNumber, (err, res, payload) => {
       callback(err, JSON.parse(payload.toString()))
     });
   }
 
-  ///payout method
+  //get bank account - individual
+  get_bank_account(bankAccountNumber, callback) {
+    wreck.get(this._apiEndpoint + 'bank_verification_services/' + bankAccountNumber, (err, res, payload) => {
+      callback(err, JSON.parse(payload.toString()));
+    });
+  }
+
+  //create bank account
+  //please refer https://www.billplz-sandbox.com/api#v3-bank-account-direct-verification-create-a-bank-account-bank-code-table
+  create_bank_account(params, callback) {
+    return this.request('bank_verification_services', params, callback);
+  }
+
+  /* Billplz version 4 API */
+
+  //payout method
   create_payout(params, callback) {
-    // wreck.post(this._apiEndpoint_v4 + 'mass_payment_instruction/' + params, (err, res, payload) => {
-    //   callback(err, JSON.parse(payload.toString()));
-    // });
     return this.requestv4('mass_payment_instructions', params, callback);
   }
+
+
 }
