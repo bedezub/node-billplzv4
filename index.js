@@ -1,20 +1,17 @@
 'use strict';
 
-const Wreck = require('wreck')
+import { defaults } from 'wreck';
 let wreck
 
-module.exports = class BillplzV4 {
+export default class BillplzV4 {
 
   constructor(options) {
 
     this._apiKey = null
-
     this._apiEndpoint = 'https://www.billplz.com/api/v3/'
     this._sandboxApiEndpoint = 'https://billplz-sandbox.com/api/v3/'
-
     this._apiEndpoint_v4 = 'https://www.billplz.com/api/v4/'
-    this._sandboxApiEndpoint_v4 = 'https://billplz-sandbox.com/api/v4/'
-
+    this._sandboxApiEndpoint_v4 = 'https://www.billplz-sandbox.com/api/v4/'
     this._isSandbox = false
 
     if (typeof options === 'object') {
@@ -29,10 +26,11 @@ module.exports = class BillplzV4 {
 
     if (this._isSandbox) {
       this._apiEndpoint = this._sandboxApiEndpoint
+      this._apiEndpoint_v4 = this._sandboxApiEndpoint_v4
     }
 
-    wreck =  Wreck.defaults({
-      headers: { 'Authorization': 'Basic ' + new Buffer(this._apiKey).toString('base64') }
+    wreck =  defaults({
+      headers: { 'Authorization': 'Basic ' + new Buffer.alloc(this._apiKey).toString('base64') }
     });
   }
 
@@ -116,6 +114,4 @@ module.exports = class BillplzV4 {
   create_payout(params, callback) {
     return this.requestv4('mass_payment_instructions', params, callback);
   }
-
-
 }

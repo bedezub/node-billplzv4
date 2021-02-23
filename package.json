@@ -1,6 +1,6 @@
 {
   "name": "billplzv4",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Billplz API v4. This project is under development",
   "main": "index.js",
   "directories": {
@@ -10,7 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "billplz", "billplzv4", "billplz-v4"
+    "billplz",
+    "billplzv4",
+    "billplz-v4"
   ],
   "author": "zubquzaini",
   "license": "ISC"
